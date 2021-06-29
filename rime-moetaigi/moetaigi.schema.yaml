@@ -27,7 +27,7 @@ engine:
     - punctuator
     - selector
     - navigator
-    # - express_editor
+    - express_editor
   segmentors:
     - ascii_segmentor
     - matcher
@@ -35,9 +35,9 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
-    # - echo_translator
+    - echo_translator
     - punct_translator
-    # - r10n_translator
+    - r10n_translator
     - reverse_lookup_translator
   filters:
     - simplifier
