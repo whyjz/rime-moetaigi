@@ -1,0 +1,201 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: moetaigi-tsuim
+  name: 萌台語-注音
+  version: "0.1"
+  author: 鄭懷傑 <whyjayzheng@gmail.com>
+  description: 基於萌典 API 的 RIME 臺語注音輸入法
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - r10n_translator
+    - reverse_lookup_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lL.>o0p;:/-uUjJ 43btgz657'
+  initials: '1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lL.>o0p;:/-uUjJ'
+  finals: " 43657"
+  delimiter: "'"
+  use_space: true
+  algebra:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/keymap_bopomofo
+  #algebra:
+    #- derive/ts/ch/	#POJ
+    #- derive/j([^i]*)/l$1/	#熱l-
+    #- derive/ji/li/	#字l-
+    #- derive/ji/gi/	#字g-
+    #- xform/6/7/ #後-7
+    #- derive/EI/e/	#病-enn
+    #- derive/EI/i/	#病-inn
+    #- derive/EE/ee/	#馬-ee
+    #- derive/EE/e/	#馬-e
+    #- derive/IA/ia/	#上-iang
+    #- derive/IA/io/	#上-iong
+    #- derive/UIn?n?/ng/	#酸-ng
+    #- derive/UI/ui/	#酸-uinn
+    #- derive/ik/iak/	#竹-iak
+    #- derive/Ee/ere/	#雞-ere
+    #- derive/Ee/ue/	#雞-ue
+    #- derive/Ee/e/	#雞-e
+    #- derive/Er/er/	#短-er
+    #- derive/Er/e/	#短-e
+    #- derive/ER/er/	#飛-er
+    #- derive/ER/e/	#飛-e
+    #- derive/ER/ue/	#飛-ue
+    #- derive/EN/ern/	#巾-ern
+    #- derive/EN/un/	#巾-un
+    #- derive/EN/in/	#巾-in
+    #- derive/ET/ert/	#核-ert
+    #- derive/ET/ut/	#核-ut
+    #- derive/ET/it/	#核-it
+    #- derive/EG/ng/	#等-ng
+    #- derive/EG/erng/	#等-erng
+    #- derive/EG/ing/	#等-ing
+    #- derive/EK/erk/	#則-erk
+    #- derive/EK/ik/	#則-ik
+    #- derive/EM/erm/	#欣-erm
+    #- derive/EM/im/	#欣-im
+    #- derive/UR/ir/	#子-ir
+    #- derive/UR/u/	#子-u
+    #- derive/UU/u/	#羽-u
+    #- derive/UU/i/	#羽-i
+    #- derive/II/ir/	#於-ir
+    #- derive/II/u/	#於-u
+    #- derive/II/i/	#於-i
+    #- derive/IR/ir/	#IR -ir
+    #- derive/IR/u/	#IR -u
+    #- derive/IR/i/	#IR -i
+    # #IR: 飫預豬鋤佇箸鋤汝女去魚漁徐(13字)
+    #- derive/OO/oo/	#多-oo
+    #- derive/OO/o/	#多-o
+    #- derive/MU/ber/	#糜ber
+    #- derive/MU/be/	#糜be
+    #- derive/MU/muai/	#糜muai
+    #- derive/MU/mue/	#糜mue
+    #- derive/UN/uinn/	#關-uinn
+    #- derive/UN/uainn/	#關-uainn
+    #- derive/UN/uenn/	#關-uenn
+    #- derive/UA/uinn/	#縣-uinn
+    #- derive/UA/uainn/	#縣-uainn
+    #- derive/UA/uan/	#縣-uan
+    #- derive/Io/io/	#樓-io
+    #- derive/Io/oo/	#樓-oo
+    #- derive/Io/er/	#樓-er
+    #- derive/IO/io/	#口-io
+    #- derive/IO/oo/	#口-oo
+    #- derive/IO/er/	#口-er
+    #- derive/BU/mui/	#每mui
+    #- derive/BU/bue/	#每bue
+    #- derive/AI/ui/	#反-ui
+    #- derive/AI/ai/	#反-ai
+    #- derive/AI/ing/	#反-ing
+    #- derive/AI/an/	#反-an
+    #- derive/NA/nai/	#荔nai
+    #- derive/NA/nui/	#荔nui
+    #- derive/NA/ling/	#荔ling
+    #- derive/GA/ngui/	#眼ngui
+    #- derive/GA/ngai/	#眼ngai
+    #- derive/GA/ging/	#眼ging
+    #- derive/GA/gan/	#眼gan
+    #- derive/UE/uee/	#話uee
+    #- derive/UE/ue/	#話ue
+    #- derive/UE/ua/	#話ua
+    #- derive/OM/erm/	#森 -erm
+    #- derive/OM/im/	#森 -im
+    #- derive/OM/om/	#森 -om
+    #- derive/AM/om/	#掩 -om	
+    #- derive/AM/am/	#掩 -am
+    #- derive/LI/li/	#--裡 li
+    #- derive/LI/lin/	#--裡 lin
+    #- derive/LI/ni/	#--裡 ni
+    #- derive/iunn/ionn/
+    #- derive/(ng?)iu/$1io/
+    #- derive/ing/eng/	#POJ
+    #- derive/ik/ek/	#POJ
+    #- derive/ua/oa/	#POJ
+    #- derive/ue/oe/	#POJ
+    #- derive/oo/ou/	#POJ
+    #- derive/^([a-z]+)\d$/$1/
+    #- abbrev/^([ptkmnbglsjhiuc]g?s?h?h?).*/$1/
+    #- 'xlit 12345678 [/\]90-;'
+
+translator:
+  dictionary: moetaigi
+  # prism: bopomofo
+  preedit_format:
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lL.>o0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+
+
+#reverse_lookup:
+#  dictionary: luna_pinyin
+#  prefix: "`"
+#  tips: 〔拼音〕
+#  preedit_format:
+#    - xform/([nljqxy])v/$1ü/
+
+punctuator:
+  import_preset: default
+
+# key_binder:
+#   import_preset: default
+  # bindings:
+  #  - { when: has_menu, accept: minus, send: minus }  # 第7調
+  #  - { when: paging, accept: minus, send: Page_Up }
+
+recognizer:
+  import_preset: default
+  # patterns:
+  #   reverse_lookup: "`[a-z]*$"
+
+style:
+  display_tray_icon: false
+  font_face: "Noto Sans TC, Noto Sans, 思源黑體, tshiuthau-oo-taigi, Fira-Sans"
+  font_point: 24
+  fullscreen: false
+  horizontal: true
+  inline_preedit: false
+  layout:
+    border_width: 3
+    candidate_spacing: 5
+    hilite_padding: 2
+    hilite_spacing: 4
+    margin_x: 12
+    margin_y: 6
+    min_height: 0
+    min_width: 160
+    round_corner: 4
+    spacing: 10

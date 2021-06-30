@@ -1,0 +1,65 @@
+# Rime spelling algebra rules for Tsuim
+
+pinyin_to_tsuim:
+  __append:
+    - xform/tsh(?=i)/C/      # ㄑ
+    - xform/tsh/c/           # ㄘ
+    - xform/ts(?=i)/Z/       # ㄐ
+    - xform/ts/z/            # ㄗ
+    - xform/ph/P/            # ㄆ
+    - xform/th/T/            # ㄊ
+    - xform/kh/K/            # ㄎ
+    - xform/s(?=i)/S/        # ㄒ
+    - xform/j(?=i)/J/        # ㆢ
+    - xform/ainn/Y/          # ㆮ
+    - xform/aunn/X/          # ㆯ
+    - xform/ann/A/           # ㆩ
+    - xform/onn/Q/           # ㆧ
+    - xform/enn/E/           # ㆥ
+    - xform/inn/I/           # ㆪ
+    - xform/unn/U/           # ㆫ
+    - xform/ang/[/           # ㄤ
+    - xform/ong/]/           # ㆲ
+    - xform/(?<=i)ng/R/      # ㄥ
+    - xform/ng(?![1-9])/G/   # ㄫ
+    - xform/ng/r/            # ㆭ
+    - xform/ai/y/            # ㄞ
+    - xform/au/x/            # ㄠ
+    - xform/oo/O/            # ㆦ (1)
+    - xform/o(?=[hkpt])/O/   # ㆦ (2)
+    - xform/am/{/            # ㆰ
+    - xform/om/}/            # ㆱ
+    - xform/(?<=[eiu])m/M/   # ㆬ (1)
+    - xform/^m(?=[1-9])/M/   # ㆬ (2)
+    - xform/an/0/            # ㄢ
+    - xform/(?<=[iu])n/N/    # ㄣ
+    - xform/p4/91/           # ㆴ (1) + 一聲
+    - xform/p(?=8)/9/        # ㆴ (2)
+    - xform/t4/>1/           # ㆵ (1) + 一聲
+    - xform/t(?=8)/>/        # ㆵ (2)
+    - xform/k4/<1/           # ㆶ (1) + 一聲
+    - xform/k(?=8)/</        # ㆶ (2)
+    - xform/h4/41/           # ㆷ (1) + 一聲
+    - xform/h(?=8)/4/        # ㆷ (2)
+
+
+
+
+
+
+#free_order:
+#  __append:
+#    - derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/
+#    - derive/([iuv])([aoeEAIOUMNKGR])/$2$1/
+#    - derive/([bpmfdtnlgkhjqxZCSrzcs])([aoeEAIOUMNKGR])/$2$1/
+#    - derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/
+
+#abbreviation:
+#  __append:
+#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+$/$1/
+#    - abbrev/^([A-Za-z]+)\d$/$1/
+#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+(\d)$/$1$2/
+
+keymap_bopomofo:
+  __append:
+    - 'xlit|pbPmtTnlkgKGhZJCSzjcsaAOQoeEyYxX{}M0N[]RriIuU1239><4578|1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lL.>o0p;:/-uUjJ 43btgz657|'
