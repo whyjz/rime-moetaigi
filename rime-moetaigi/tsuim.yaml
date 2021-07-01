@@ -42,11 +42,6 @@ pinyin_to_tsuim:
     - xform/h4/41/           # ㆷ (1) + 一聲
     - xform/h(?=8)/4/        # ㆷ (2)
 
-
-
-
-
-
 #free_order:
 #  __append:
 #    - derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/
@@ -54,12 +49,34 @@ pinyin_to_tsuim:
 #    - derive/([bpmfdtnlgkhjqxZCSrzcs])([aoeEAIOUMNKGR])/$2$1/
 #    - derive/([bpmfdtnlgkhjqxZCSrzcs])([iuv])/$2$1/
 
-#abbreviation:
-#  __append:
-#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+$/$1/
-#    - abbrev/^([A-Za-z]+)\d$/$1/
-#    - abbrev/^([bpmfdtnlgkhjqxZCSrzcs]).+(\d)$/$1$2/
+abbreviation:
+  __append:
+    # ==== 免打聲調 ====
+    - abbrev/^(.+[49><])[18]$/$1/        # 四八聲免打輕聲分別 (1)
+    - abbrev/^(.+)[49><].$/$1/           # 四八聲免打聲調 (2)
+    - abbrev/^(.+)[12357]$/$1/           # 一二三五七聲免打聲調 (部分規則與 #1 重疊)
+    # ==== 免打注音 ====
+    - abbrev/^(.)(.)[12357]$/$1/         # 二部件一二三五七聲免打第二部件 (跟單部件四聲 #2 重複)
+    - abbrev/^(.)(.)(.)[12357]$/$1$2/    # 三部件一二三五七聲免打第三部件 (跟二部件四聲 #2 重複)
+    - abbrev/^(.)(.)(.)[12357]$/$1/      # 三部件一二三五七聲免打第二三部件 (3)
+    - abbrev/^(.)(.)[49><][18]$/$1/      # 二部件四八聲免打第二部件  (部分規則與 #3 重疊)
+    - abbrev/^(.)(.)(.)[49><][18]$/$1$2/ # 三部件四八聲免打第三部件
+    - abbrev/^(.)(.)(.)[49><][18]$/$1/   # 三部件四八聲免打第二三部件
+
+# To check regex:
+# https://regex101.com/
+# test strings:
+# mi7
+# piR1
+# {7
+# I7
+# Ji>8
+# ba41
+# Ji98
+# i<8
+# i<1
+# jua48
 
 keymap_bopomofo:
   __append:
-    - 'xlit|pbPmtTnlkgKGhZJCSzjcsaAOQoeEyYxX{}M0N[]RriIuU1239><4578|1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lL.>o0p;:/-uUjJ 43btgz657|'
+    - 'xlit|pbPmtTnlkgKGhZJCSzjcsaAOQoeEyYxX{}M0N[]RriIuU1239><4578|1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lLoOm0p;:/-uUjJ 43btgz657|'
