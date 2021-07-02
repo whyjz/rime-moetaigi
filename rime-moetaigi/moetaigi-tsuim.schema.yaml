@@ -38,8 +38,8 @@ engine:
   translators:
     - echo_translator
     - punct_translator
-    # - script_translator
-    - r10n_translator    # aka script_translator
+    - script_translator
+    # - r10n_translator    # aka script_translator
     - reverse_lookup_translator
   filters:
     - simplifier
@@ -80,32 +80,38 @@ translator:
 # punctuator:
 #   import_preset: default
 
-# key_binder:
-#   import_preset: default
-  # bindings:
+editor:
+  bindings:
+    Return: confirm   # Enter 上屏
+#     space: toggle_selection
+
+key_binder:
+  # import_preset: default
+  bindings:
+    - { when: always, accept: space, send: Return } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
   #  - { when: has_menu, accept: minus, send: minus }  # 第7調
   #  - { when: paging, accept: minus, send: Page_Up }
 
 # recognizer:
-  # import_preset: default
+#   import_preset: default
   # patterns:
   #   reverse_lookup: "`[a-z]*$"
 
-style:
-  display_tray_icon: false
-  font_face: "Noto Sans TC, Noto Sans, 思源黑體, tshiuthau-oo-taigi, Fira-Sans"
-  font_point: 24
-  fullscreen: false
-  horizontal: true
-  inline_preedit: false
-  layout:
-    border_width: 3
-    candidate_spacing: 5
-    hilite_padding: 2
-    hilite_spacing: 4
-    margin_x: 12
-    margin_y: 6
-    min_height: 0
-    min_width: 160
-    round_corner: 4
-    spacing: 10
+# style:
+#   display_tray_icon: false
+#   font_face: "Noto Sans TC, Noto Sans, 思源黑體, tshiuthau-oo-taigi, Fira-Sans"
+#   font_point: 24
+#   fullscreen: false
+#   horizontal: true
+#   inline_preedit: false
+#   layout:
+#     border_width: 3
+#     candidate_spacing: 5
+#     hilite_padding: 2
+#     hilite_spacing: 4
+#     margin_x: 12
+#     margin_y: 6
+#     min_height: 0
+#     min_width: 160
+#     round_corner: 4
+#     spacing: 10
