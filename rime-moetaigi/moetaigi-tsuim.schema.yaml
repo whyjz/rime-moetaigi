@@ -49,8 +49,8 @@ engine:
 #   alternative_select_keys: "!@#$%^&"
 
 speller:
-  alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lLoOm0p;:/-uUjJ 43btgz657'
-  initials: '1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lLoOm0p;:/-uUjJ'
+  alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657'
+  initials: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ'
   finals: " 43657"
   delimiter: "'"
   use_space: true
@@ -67,7 +67,7 @@ translator:
   dictionary: moetaigi
   prism: tsuim
   preedit_format:
-    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIk,<9(lLoOm0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
 
 
 #reverse_lookup:
