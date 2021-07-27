@@ -14,7 +14,7 @@ switches:
     reset: 0
     states: [ 中文, 西文 ]
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半形, 全形 ]
   # - name: ascii_punct
   #   states: [ 。，, ．， ]
 
@@ -77,8 +77,38 @@ translator:
 #  preedit_format:
 #    - xform/([nljqxy])v/$1ü/
 
-# punctuator:
-#   import_preset: default
+punctuator:
+  # import_preset: moetaigi-tsuim-symbols
+  # 依照教育部《重訂標點符號手冊》排序
+  # https://language.moe.gov.tw/001/upload/files/site_content/m0001/hau/haushou.htm
+  full_shape: &symtable
+    ">" : { commit: "。" }
+    "." : { commit: "，" }
+    "\"" : { commit: "、" }
+    "\\" : { commit: "；" }
+    "=" : { commit: "：" }
+    "?" : { commit: "？" }
+    "[" : [ "「", "〈" ]
+    "]" : [ "」", "〉"]
+    "{" : { commit: "（" }
+    "}" : { commit: "）" }
+    "?" : { commit: "？" }
+    "|" : { commit: "！" }
+    "_" : { commit: "─" }
+    "+" : [ "‧" ]
+    "~" : { commit: "～" }
+  half_shape: *symtable
+  symbols:
+    "[[" : [ "『", "《" ]
+    "]]" : [ "』", "》" ]
+    "++" : [ "…" ]
+    "+++" : [ "…" ]
+
+recognizer:
+  # import_preset: default
+  patterns:
+    punct: "[[]{2}$|[]]{2}$|[+]{2,3}$"    # 比對 "[[", "]]", "++", 和 "+++"
+    # reverse_lookup: "`[a-z]*$"
 
 editor:
   bindings:
@@ -92,10 +122,7 @@ key_binder:
   #  - { when: has_menu, accept: minus, send: minus }  # 第7調
   #  - { when: paging, accept: minus, send: Page_Up }
 
-# recognizer:
-#   import_preset: default
-  # patterns:
-  #   reverse_lookup: "`[a-z]*$"
+
 
 style:
   # ==========================================================================================
