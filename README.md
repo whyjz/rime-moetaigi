@@ -25,8 +25,8 @@
 
 1. 安裝 [Rime](https://rime.im/) 的發行版
 2. 下載 [rime-moetaigi](https://github.com/whyjz/rime-moetaigi/archive/refs/heads/main.zip)
-3. 解壓縮後找到 `moetaigi-tsuim.schema.yaml`、`tsuim.yaml`，和 `moetaigi.dict.yaml` 三個檔案，複製到 `%APPDATA%\Rime` 資料夾底下 (非 Windows 作業系統請參考 [用戶文件夾位置](https://github.com/rime/home/wiki/UserData))。
-4. 重新佈署 Rime 以後，進入輸入法設定啟用「萌台語-注音」(如下圖)。
+3. 解壓縮後找到 `moetaigi-tsuim.schema.yaml`、`tsuim.yaml`、`moetaigi.dict.yaml`，和 `moetaigi.extended.dict.yaml` 四個檔案，複製到 `%APPDATA%\Rime` 資料夾底下 (非 Windows 作業系統請參考 [用戶文件夾位置](https://github.com/rime/home/wiki/UserData))。
+4. **重新佈署** Rime 以後，進入**輸入法設定**啟用「萌台語-注音」(如下圖)。
 
 ![啟用「萌台語-注音」](doc/images/rime-moetaigi-install.png)
 
@@ -40,6 +40,28 @@
 
 ![鍵盤配置](doc/images/Keyboard_layout_Tsuim.png)
 *萌台語-注音輸入法的注音配置。**淺綠色底的按鍵**：與大千式注音鍵盤相同或發音相似的注音。**紅色底的按鍵**：與大千式注音鍵盤不同的注音。**黃色底的按鍵**：聲調符號。 修改自 [Sakurambo](https://commons.wikimedia.org/wiki/File:Keyboard_layout_Zhuyin.svg) 的作品。本作品以 [CC BY-SA 4.0 授權](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)發布。*
+
+- 輸入全形標點符號：
+
+| 輸入 | 呈現 | 
+| ---- | ---- |
+| `.` | ，|
+| `>` | 。 |
+| `"` | 、 |
+| `\` | ； |
+| `=` | ： |
+| `[` | 「或〈 |
+| `]` | 」或〉 |
+| `[[` | 『或《 |
+| `]]` | 』或》 |
+| `{` | （ |
+| `}` | ） |
+| `?` | ？ |
+| `|` | ！ |
+| `_` | ─ (連接號或半破折號)|
+| `+` | ‧ (音界號，又稱間隔號) |
+| `~` | ～ |
+
 
 詳細的說明文檔 (之後補上)
 

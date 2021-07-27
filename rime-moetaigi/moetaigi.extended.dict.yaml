@@ -1,0 +1,66 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 在萌典 API 收錄詞條外加入的詞彙表。
+
+---
+name: moetaigi.extended
+version: "0.1"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+ㄅ	p1
+ㆠ	b1
+ㄆ	ph1
+ㄇ	mo1
+ㄉ	t1
+ㄊ	th1
+ㄋ	no1
+ㄌ	l1
+ㄍ	k1
+ㆣ	g1
+ㄎ	kh1
+ㄫ	ngo1
+ㄏ	h1
+ㄐ	tsi1
+ㆢ	ji1
+ㄑ	tshi1
+ㄒ	si1
+ㄗ	ts1
+ㆡ	j1
+ㄘ	tsh1
+ㄙ	s1
+ㄚ	a1
+ㆩ	ann1
+ㆦ	oo1
+ㆧ	onn1
+ㄜ	o1
+ㆤ	e1
+ㆥ	enn1
+ㄞ	ai1
+ㆮ	ainn1
+ㄠ	au1
+ㆯ	aunn1
+ㆰ	am1
+ㆱ	om1
+ㆬ	m1
+ㄢ	an1
+ㄣ	n1
+ㄤ	ang1
+ㆲ	ong1
+ㄥ	ng11
+ㆭ	ng1
+ㄧ	i1
+ㆪ	inn1
+ㄨ	u1
+ㆫ	unn1
+ ˋ	2
+˪	3
+ㆴ	p4
+ㆵ	t4
+ㆶ	k4
+ㆷ	h4
+ˊ	5
+˫	7
+˙	8

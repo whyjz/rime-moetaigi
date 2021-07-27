@@ -20,7 +20,8 @@ pinyin_to_tsuim:
     - xform/unn/U/           # ㆫ
     - xform/ang/[/           # ㄤ
     - xform/ong/]/           # ㆲ
-    - xform/(?<=i)ng/R/      # ㄥ
+    - xform/(?<=i)ng/R/      # ㄥ (1)
+    - xform/^ng11$/R1/       # ㄥ (2) 比對 "ng11"，打注音ㄥ專用
     - xform/ng(?![1-9])/G/   # ㄫ
     - xform/ng/r/            # ㆭ
     - xform/ai/y/            # ㄞ
@@ -30,9 +31,10 @@ pinyin_to_tsuim:
     - xform/am/{/            # ㆰ
     - xform/om/}/            # ㆱ
     - xform/(?<=[eiu])m/M/   # ㆬ (1)
-    - xform/^m(?=[1-9])/M/   # ㆬ (2)
+    - xform/^m(?=[1-9])/M/   # ㆬ (2) 比對單 m 接聲調符號
     - xform/an/0/            # ㄢ
-    - xform/(?<=[iu])n/N/    # ㄣ
+    - xform/(?<=[iu])n/N/    # ㄣ (1)
+    - xform/^n(?=[1-9])/N/   # ㄣ (2) 比對單 n 接聲調符號，打注音ㄣ專用
     - xform/p4/91/           # ㆴ (1) + 一聲
     - xform/p(?=8)/9/        # ㆴ (2)
     - xform/t4/>1/           # ㆵ (1) + 一聲
