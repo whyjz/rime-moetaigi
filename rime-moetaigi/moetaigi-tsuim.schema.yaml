@@ -6,8 +6,12 @@ schema:
   schema_id: moetaigi-tsuim
   name: 萌台語-注音
   version: "0.1"
-  author: 鄭懷傑 <whyjayzheng@gmail.com>
-  description: 基於萌典 API 的 RIME 臺語注音輸入法
+  author: 
+    - 鄭懷傑 whyjz <whyjayzheng@gmail.com>
+  description: 基於萌典 API 的 RIME 臺語注音輸入法。
+  # dependencies: 
+  #   - luna_pinyin
+  #   - moetaigi-test
 
 switches:
   - name: ascii_mode
@@ -33,17 +37,26 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
+    - affix_segmentor@learning
+    - affix_segmentor@zhuyin
+    # - affix_segmentor@pinyin
     - punct_segmentor
     - fallback_segmentor
+    # - affix_segmentor@custom_reverse_lookup
   translators:
-    - echo_translator
+    # - echo_translator
     - punct_translator
     - script_translator
     # - r10n_translator    # aka script_translator
-    - reverse_lookup_translator
+    # - reverse_lookup_translator
+    - script_translator@learning
+    # - table_translator@bopomo_onion_phrase
+    - script_translator@zhuyin
   filters:
     - simplifier
     - uniquifier
+    - reverse_lookup_filter@tsuim_reverse_lookup
+    # - reverse_lookup_filter@bpm_reverse_lookup
 
 # menu:
 #   alternative_select_keys: "!@#$%^&"
@@ -60,14 +73,92 @@ speller:
       - tsuim:/abbreviation
       - tsuim:/keymap_bopomofo
 
-    #- abbrev/^([ptkmnbglsjhiuc]g?s?h?h?).*/$1/
-    #- 'xlit 12345678 [/\]90-;'
-
 translator:
   dictionary: moetaigi
-  prism: tsuim
+  # prism: tsuim
+  spelling_hints: 0
+  # enable_sentence: true
   preedit_format:
     - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+  # comment_format:
+  #   __patch:
+  #     - tsuim:/pinyin_to_tsuim
+  #     - tsuim:/keymap_bopomofo
+  #     - tsuim:/bopomofo_symbols
+
+learning:
+  tag: learning
+  dictionary: moetaigi
+  prism: tsuim
+  tips: 《注音顯示》
+  spelling_hints: 6    # 注音學習模式
+  prefix: "'"
+  preedit_format:
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+    - xform/^/《注音顯示》/
+  comment_format:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/keymap_bopomofo
+      - tsuim:/bopomofo_symbols
+
+zhuyin:
+  tag: zhuyin
+  dictionary: terra_pinyin # luna_pinyin
+  prism: bopomofo_tw
+  prefix: "`"
+# 漢語拼音輸入以〔大寫〕「P」引導
+  # suffix: ;
+  spelling_hints: 3    # 注音學習模式
+  preedit_format: # &pinyin
+    - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙ |"
+    # - xform/([nl])v/$1ü/
+    # - xform/([nl])ue/$1üe/
+    # - xform/([jqxy])v/$1u/
+  tips: 《中文反查》
+  # closing_tips: 【蒼頡】
+  # initial_quality: 0.2  # 調整該編譯器出字優先度
+
+tsuim_reverse_lookup:
+  tags: [ zhuyin ]
+  overwrite_comment: true
+  dictionary: moetaigi
+  comment_format:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/keymap_bopomofo
+      - tsuim:/bopomofo_symbols
+
+
+# custom_reverse_lookup:
+#   tag: custom_reverse_lookup
+#   dictionary: cangjie5 # luna_pinyin # cangjie5
+#   enable_completion: false
+#   enable_sentence: false
+#   enable_user_dict: true
+#   # prefix: "`"
+#   prefix: "="
+#   suffix: " "
+#   tips: "《喔喔4》"
+#   preedit_format:
+#   #   - xform/([nljqxy])v/$1ü/
+#    - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+#    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
+#    - xform/^/《反查》/
+#    - 'xform/\\/ /'
+
+# reverse_lookup:
+#   dictionary: moetaigi # luna_pinyin # moetaigi-tsuim-index #  # 新增了字典檔 可能用不上
+#   prefix: "`"
+#   tips: 〔學習模式〕
+#   preedit_format:
+#     - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+#   comment_format:
+#     __patch:
+#       - tsuim:/pinyin_to_tsuim
+#       - tsuim:/keymap_bopomofo
+#       - tsuim:/bopomofo_symbols
+
 
 
 #reverse_lookup:
@@ -76,6 +167,37 @@ translator:
 #  tips: 〔拼音〕
 #  preedit_format:
 #    - xform/([nljqxy])v/$1ü/
+
+# tsuim_reverse_lookup:
+#   tags: [ custom_reverse_lookup ]
+#   overwrite_comment: true
+#   dictionary: bopomo_onion.extended
+#   comment_format:
+#     - xform/iu/iou/
+#     - xform/ui/uei/
+#     - xform/ong/ung/
+#     - xform/yi?/i/
+#     - xform/wu?/u/
+#     - xform/iu/v/
+#     - xform/([jqx])u/$1v/
+#     - xform/([iuv])n/$1en/
+#     - xform/zhi?/Z/
+#     - xform/chi?/C/
+#     - xform/shi?/S/
+#     - xform/([zcsr])i/$1/
+#     - xform/ai/A/
+#     - xform/ei/I/
+#     - xform/ao/O/
+#     - xform/ou/U/
+#     - xform/ang/K/
+#     - xform/eng/G/
+#     - xform/an/M/
+#     - xform/en/N/
+#     - xform/er/R/
+#     - xform/eh/E/
+#     - xform/([iv])e/$1E/
+#     - xform/1//
+#     - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR2345|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˊˇˋ˙|'
 
 punctuator:
   # import_preset: moetaigi-tsuim-symbols
@@ -108,7 +230,11 @@ recognizer:
   # import_preset: default
   patterns:
     punct: "[[]{2}$|[]]{2}$|[+]{2,3}$"    # 比對 "[[", "]]", "++", 和 "+++"
-    # reverse_lookup: "`[a-z]*$"
+    # reverse_lookup: "`[a-z]*$"   # wrong pattern
+    # reverse_lookup: "`.*$"
+    # custom_reverse_lookup: "`[a-z]*$"   # wrong pattern
+    learning: "'.*$"
+    zhuyin: "`.*$"
 
 editor:
   bindings:
