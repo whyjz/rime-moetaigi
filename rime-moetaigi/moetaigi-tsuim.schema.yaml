@@ -75,7 +75,7 @@ speller:
 
 translator:
   dictionary: moetaigi
-  # prism: tsuim
+  prism: tsuim
   spelling_hints: 0
   # enable_sentence: true
   preedit_format:
