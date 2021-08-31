@@ -9,7 +9,8 @@ schema:
   author: 
     - 鄭懷傑 whyjz <whyjayzheng@gmail.com>
   description: 基於萌典 API 的 RIME 臺語注音輸入法。
-  # dependencies: 
+  dependencies: 
+    - moetaigi.unspaced
   #   - luna_pinyin
   #   - moetaigi-test
 
@@ -109,9 +110,10 @@ zhuyin:
   prefix: "`"
 # 漢語拼音輸入以〔大寫〕「P」引導
   # suffix: ;
-  spelling_hints: 3    # 注音學習模式
+  spelling_hints: 6    # 注音學習模式
   preedit_format: # &pinyin
     - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙ |"
+    - xform/^/《中文反查》/
     # - xform/([nl])v/$1ü/
     # - xform/([nl])ue/$1üe/
     # - xform/([jqxy])v/$1u/
@@ -122,7 +124,7 @@ zhuyin:
 tsuim_reverse_lookup:
   tags: [ zhuyin ]
   overwrite_comment: true
-  dictionary: moetaigi
+  dictionary: moetaigi.unspaced
   comment_format:
     __patch:
       - tsuim:/pinyin_to_tsuim

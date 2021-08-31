@@ -1,0 +1,40 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: moetaigi.unspaced
+  name: 萌台語-無空格辭典「僅供反查」
+  version: "0.1"
+  author: 
+    - 鄭懷傑 whyjz <whyjayzheng@gmail.com>
+  description: 輔助《萌台語-注音》的無空格辭典 Schema。
+
+engine:
+  processors:
+    - speller
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - script_translator
+
+speller:
+  alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657'
+  initials: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ43btgz657'
+  finals: " 43657"
+  delimiter: "'"
+  use_space: true
+  algebra:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/abbreviation
+      - tsuim:/keymap_bopomofo
+
+translator:
+  dictionary: moetaigi.unspaced
+  prism: tsuim.unspaced
+  spelling_hints: 0
+  preedit_format:
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
