@@ -1,11 +1,15 @@
 # Rime dictionary
 # encoding: utf-8
+#
+# 依據萌典 API 自動產生。如欲新增詞彙請至 moetaigi.extended.dict.yaml。
 
 ---
 name: moetaigi
 version: "0.1"
 sort: by_weight
 use_preset_vocabulary: false
+import_tables:
+  - moetaigi.extended
 ...
 㔂	lan5
 㔂甘蔗	lan5 kam1 tsia3

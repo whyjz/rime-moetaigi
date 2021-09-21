@@ -93,63 +93,70 @@ def numberize_tone(pronunciation):
     final_pronun = ' '.join(d_fin)
     return final_pronun
 
-words_list_url = 'https://raw.githubusercontent.com/g0v/moedict-webkit/master/t/index.json'
-
-with urlopen(words_list_url) as url:
-    data = json.loads(url.read().decode())
-        
-
-with open('moetaigi-autogen.dict.yaml', 'w') as w:
+if __name__ == "__main__":
     
-    i = 0
-    log = open('moetaigi-autogen.log', 'w')
-    # [11580:11620] 熱
-    # [40:80] 諺語
-    for word in data:
-        i += 1
-        word_quote = quote(word)
-        word_url = 'https://www.moedict.tw/t/' + word_quote + '.json'
+    words_list_url = 'https://raw.githubusercontent.com/g0v/moedict-webkit/master/t/index.json'
+
+    with urlopen(words_list_url) as url:
+        data = json.loads(url.read().decode())
         
-        try: 
-            with urlopen(word_url) as url:
-                word_json = json.loads(url.read().decode())
-        except HTTPError:
-            txt = '==== 警告 ==== 揣無 "' + word + '" 的發音！ ({})'.format(i)
-            print(txt)
-            log.write(txt + '\n')
-            continue
+    with open('moetaigi-raw.dict.yaml', 'w') as w, open('gen_dict.log', 'w') as log:
+
         
-        pronun_count = count_pronunciation(word_json)
-        
-        for each_explanation in word_json['h']:
-            pronunciation = each_explanation['T']
-            # print(pronunciation)
-            pronun_list = pronunciation.split('/')
-            if pronun_count == 1:
-                pronunciation = pronunciation.replace('-', ' ')
-                # w.write('{}\t{}\n'.format(word, pronunciation))
-                pronunciation = numberize_tone(pronunciation)
-                w.write('{}\t{}\n'.format(word, pronunciation))
-            else:
-                weight = 1 / pronun_count
-                for each_pronun in pronun_list:
-                    each_pronun = each_pronun.replace('-', ' ')
-                    # w.write('{}\t{}\t{:.0%}\n'.format(word, each_pronun, weight))
-                    each_pronun = numberize_tone(each_pronun)
-                    w.write('{}\t{}\t{:.0%}\n'.format(word, each_pronun, weight))
-                    
-    log.close()
-                
-                
-                
+        # Make headers in w
+        w.write('# Rime dictionary\n')
+        w.write('# encoding: utf-8\n')
+        w.write('#\n')
+        w.write('# 依據萌典 API 自動產生。如欲新增詞彙請至 moetaigi.extended.dict.yaml。\n')
+        w.write('\n')
+        w.write('---\n')
+        w.write('name: moetaigi\n')
+        w.write('version: "0.1"\n')
+        w.write('sort: by_weight\n')
+        w.write('use_preset_vocabulary: false\n')
+        w.write('import_tables:\n')
+        w.write('  - moetaigi.extended\n')
+        w.write('...\n')
+    
+        i = 0
+        #### Testing data sets:
+        # [11580:11620] 熱
+        # [40:80] 諺語
+        ####
+        for word in data:
+            i += 1
+            word_quote = quote(word)
+            word_url = 'https://www.moedict.tw/t/' + word_quote + '.json'
+
+            try: 
+                with urlopen(word_url) as url:
+                    word_json = json.loads(url.read().decode())
+            except HTTPError:
+                txt = '==== 警告 ==== 揣無 "' + word + '" 的發音！ ({})'.format(i)
+                print(txt)
+                log.write(txt + '\n')
+                continue
+
+            pronun_count = count_pronunciation(word_json)
+
+            for each_explanation in word_json['h']:
+                pronunciation = each_explanation['T']
+                # print(pronunciation)
+                pronun_list = pronunciation.split('/')
+                if pronun_count == 1:
+                    pronunciation = pronunciation.replace('-', ' ')
+                    pronunciation = numberize_tone(pronunciation)
+                    w.write('{}\t{}\n'.format(word, pronunciation))
+                else:
+                    weight = 1 / pronun_count
+                    for each_pronun in pronun_list:
+                        each_pronun = each_pronun.replace('-', ' ')
+                        each_pronun = numberize_tone(each_pronun)
+                        w.write('{}\t{}\t{:.0%}\n'.format(word, each_pronun, weight))
 
                 
                 
-#         pronunciation = pronunciation.replace('-', ' ')
-#         pronunciation = pronunciation.split('/')[0]
-#         w.write('{}\t{}\n'.format(word, pronunciation))
-
-
+###### Test codes...
 # word = '夭壽'
 # word_n = quote(word)
 
@@ -161,9 +168,5 @@ with open('moetaigi-autogen.dict.yaml', 'w') as w:
 #         data = json.loads(url.read().decode())
 #         pron = data['h'][0]['T']
 #     w.write('{}\t{}'.format(word, pron))
-
-
-
-
 
 # print(data[:10])

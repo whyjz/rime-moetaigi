@@ -1,12 +1,12 @@
-inputfile="char_freq.txt"
-dictfile="moetaigi-raw.dict.yaml"
+inputfile="char_freq_merged.txt"
+dictfile="source_data/moetaigi-raw.dict.yaml"
 new_dictfile="moetaigi.dict.yaml"
 
 cut -d $'\t' -f 1,2 $dictfile > $new_dictfile
 while IFS= read -r line
 do
-    c=$(echo $line | cut -d " " -f 1)
-    n=$(echo $line | cut -d " " -f 2)
+    c=$(echo $line | cut -d " " -f 2)
+    n=$(echo $line | cut -d " " -f 4)
     # echo $c
     d=$(grep -P "^$c\t" $new_dictfile | head -n 1)
     # echo $d # | sed 's/^.//g'
