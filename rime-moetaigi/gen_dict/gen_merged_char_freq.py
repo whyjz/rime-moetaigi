@@ -21,6 +21,7 @@ for index, row in df_base1.iterrows():
         
 
 # merging base2 with base1
+#### [IMPORTANT] base 1 is a superset of base 2!!! ####
 for index, row in df_base2.iterrows():
     if '(' in row['Name']:
         target_char = row['Name'].split(' ')[0]

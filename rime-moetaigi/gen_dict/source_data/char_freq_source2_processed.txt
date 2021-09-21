@@ -67,7 +67,7 @@ No.	Name	Pronunciation	New_Freq
 5	大	tuā	10400
 42	大	tāi	4100
 1392	大	ta	350
-712	女	lí/lú	750
+712	女	lí	750
 713	女	lú	750
 142	子	tsú	2450
 242	子	tsí	1700
@@ -190,8 +190,7 @@ No.	Name	Pronunciation	New_Freq
 430	木	bo̍k	1150
 1060	木	ba̍k	500
 835	欠	khiàm	650
-586	止	tsí	900
-3611	止	tsí	50
+586	止	tsí	950
 118	歹	pháinn	2800
 48	毋	m̄	3900
 458	比	pí	1100
@@ -343,9 +342,8 @@ No.	Name	Pronunciation	New_Freq
 3643	瓦	uá	50
 627	甘	kam	850
 61	生	sing	3500
-113	生	senn/sinn	2850
+113	生	senn/sinn	3050
 432	生	tshenn/tshinn	1150
-1998	生	sinn	200
 126	用	iōng	2650
 837	用	īng	650
 167	田	tshân	2200
@@ -1151,7 +1149,6 @@ No.	Name	Pronunciation	New_Freq
 3842	炙	tsià	50
 2956	爬	pê	100
 1077	爭	tsing	500
-3843	爭	tsenn	50
 3844	爭	tsenn/tsinn	50
 530	爸	pē	1000
 2957	爸	pâ	100
@@ -3592,7 +3589,7 @@ No.	Name	Pronunciation	New_Freq
 2211	誓	sè	200
 3335	誓	tsuā	100
 2212	誘	iú	200
-422	語	gí/gú	1200
+422	語	gí	1200
 3336	語	gú	100
 4530	誡	kài	50
 4531	誣	bû	50
@@ -3860,7 +3857,7 @@ No.	Name	Pronunciation	New_Freq
 751	練	liān	750
 3381	緻	tì	100
 4613	緻	tī	50
-1691	罵	mē/mā	300
+1691	罵	mē	300
 4614	罵	mâ	50
 4615	罵	mā	50
 1925	罷	pā	250
