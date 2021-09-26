@@ -91,7 +91,7 @@
    - [『Rime 注音輸入方案』](https://github.com/rime/rime-bopomofo)(佛振)
    - [『意傳台文輸入法』](https://github.com/i3thuan5/rime-taigi)(ÌTHUÂNKHOKI 意傳科技)
    - [『RIME 台語輸入方案』](https://github.com/glll4678/rime-taigi)(莊銘彥)
-   - [『Rime 粵語拼音方案』中關於詞彙反查的討論](https://github.com/rime/rime-cantonese/pull/80)([Ayaka Mikazuki](https://github.com/ayaka14732))
+   - [『Rime 粵語拼音方案』中關於詞彙反查的討論](https://github.com/rime/rime-cantonese/pull/80) ([Ayaka Mikazuki](https://github.com/ayaka14732))
 
 <!-- 昆蟲 https://www.facebook.com/morethandee/photos/a.369345609816495/1097476730336709/?type=3 -->
 
@@ -110,4 +110,4 @@
 1. 開 Issue 提出您的問題與建議，或是未來開發的想法
 2. 隨時送一個 PR 過來，一起完善萌台語輸入法！
 
-[您可以參考這裡獲得本專案的更多細節。](#《萌台語》完整說明文檔)
+[您可以參考這裡獲得本專案的更多細節。](#萌台語完整說明文檔)
