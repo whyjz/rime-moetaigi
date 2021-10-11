@@ -27,7 +27,7 @@ pinyin_to_tsuim:
     - xform/ai/y/            # ㄞ
     - xform/au/x/            # ㄠ
     - xform/oo/O/            # ㆦ (1)
-    - xform/o(?=[kpt])/O/   # ㆦ (2)
+    - xform/o(?=[kpt])/O/    # ㆦ (2) -oh 對應到 ㄜㆷ
     - xform/am/{/            # ㆰ
     - xform/om/}/            # ㆱ
     - xform/(?<=[eiu])m/M/   # ㆬ (1)
