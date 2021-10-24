@@ -23,16 +23,23 @@
 6. **標點**　利用 Rime 輸入法方案的特點，打台文的同時可快速輸入常用的全形標點符號。[對應鍵位請參考這裡。](#輸入全形標點符號)
 7. **開源**　開放原始碼並使用 CC0 公眾領域授權，任何人都可以不受限制地使用或改進此作品，歡迎各路英雄一同精進本專案、改善程式碼、補充台語字典...！
 
-## 安裝
+## 安裝 
 
-1. 安裝 [Rime](https://rime.im/) 的發行版（小狼豪、鼠鬚管，或是 ibu-rime）
+### Windows
+
+1. 安裝 [Rime](https://rime.im/) 的 Windows 發行版「**小狼豪**」
 2. 下載 [rime-moetaigi](https://github.com/whyjz/rime-moetaigi/archive/refs/heads/main.zip)
-3. 解壓縮後找到 `moetaigi-tsuim.schema.yaml`、`moetaigi.dict.yaml`、`moetaigi.extended.dict.yaml`、`moetaigi.unspaced.dict.yaml`、`moetaigi.unspaced.schema.yaml`，以及`tsuim.yaml` 六個檔案，複製到 `%APPDATA%\Rime` 資料夾底下 (非 Windows 作業系統請參考 [用戶文件夾位置](https://github.com/rime/home/wiki/UserData))。
-4. 切換至新安裝的 Rime 輸入法，打開控制選單，**重新佈署** Rime 以後，進入**輸入法設定**啟用「萌台語-注音」(如下圖)。*(您不需要啟用「萌台語-無空格辭典」；這個辭典只要能在輸入法設定中搜尋到，就可以被「萌台語-注音」利用。)*
+3. 解壓縮後找到 `rime-moetaigi/GenYoGothic-L.ttc` 這個檔案，這是**源樣黑體 L**的字型檔。需要安裝此檔案到作業系統內，所有注音與臺文漢字才能正常顯示。字型的授權請見[這裡的說明。](#授權條款)
+4. 在同一個資料夾內找到 `moetaigi-tsuim.schema.yaml`、`moetaigi.dict.yaml`、`moetaigi.extended.dict.yaml`、`moetaigi.unspaced.dict.yaml`、`moetaigi.unspaced.schema.yaml`，以及`tsuim.yaml` 六個檔案，複製到 `%APPDATA%\Rime` 資料夾或是用戶自訂的文件夾位置底下。
+5. 切換至新安裝的 Rime 輸入法，打開控制選單，**重新佈署** Rime 以後，進入**輸入法設定**啟用「萌台語-注音」(如下圖)。*(您不需要啟用「萌台語-無空格辭典」；這個辭典只要能在輸入法設定中搜尋到，就可以被「萌台語-注音」利用。)*
 
 ![啟用「萌台語-注音」](doc/images/rime-moetaigi-install.png)
 
 5. 按下 <code>ctrl + `</code> 後選擇「萌台語-注音」，就可以開始打台語文了！
+
+### 其他作業系統
+
+安裝方式大同小異。在 iOS 上 Rime 的發行版稱為鼠鬚管，而在 Linux 上則稱為 ibus-rime。另外需注意的一點是不同作業系統的[用戶文件夾位置](https://github.com/rime/home/wiki/UserData)也不一樣，需要先確認後再行安裝。
 
 ## 簡易功能鍵、輸入鍵位指引
 
@@ -86,7 +93,8 @@
 4. 本輸入法使用如下的台語字詞頻率統計資料：
    - 楊允言等 (2005)，[台語文語料庫蒐集及語料庫為本台語書面語音節詞頻統計](http://ip194097.ntcu.edu.tw/giankiu/keoe/KKH/guliau-supin/guliau-supin.asp)，國科會計畫編號 `NSC 93-2213-E-122-001`，存取日期 2021/09/26。
    - 夢生 (Yuh-ru/Dyertung, 2018)，[部育部臺灣閩南語常用詞辭典語詞字頻表](https://blog.xuite.net/hn88196555/twblog/563937744)，發表於隨意窩 xuite.net，存取日期 2021/09/26。
-5. 感謝以下 Rime 的官方/客製化輸入法 schema 為本專案的開發提供了範本與靈感：
+5. 輸入法使用字型：[源樣黑體]((https://github.com/ButTaiwan/genyog-font) ([But Ko](https://github.com/ButTaiwan))
+6. 感謝以下 Rime 的官方/客製化輸入法 schema 為本專案的開發提供了範本與靈感：
    - [『注音 洋蔥』](https://deltazone.pixnet.net/blog/post/264319309-%E9%BC%A0%E9%AC%9A%E7%AE%A1%E6%B3%A8%E9%9F%B3%E6%96%B9%E6%A1%88---%E7%AC%A6%E5%90%88%E4%B8%80%E8%88%AC%E6%B3%A8%E9%9F%B3%E4%BD%BF%E7%94%A8%E8%80%85%E7%BF%92%E6%85%A3%E8%A8%AD)(L'Étranger Onion)
    - [『Rime 注音輸入方案』](https://github.com/rime/rime-bopomofo)(佛振)
    - [『意傳台文輸入法』](https://github.com/i3thuan5/rime-taigi)(ÌTHUÂNKHOKI 意傳科技)
@@ -99,7 +107,9 @@
 
 ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)
 
-在本作品中，除了少數以其他授權發佈的圖片外，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
+在本作品中，除了源樣黑體 L 的字型檔以及少數以其他授權發佈的圖片外，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
+
+源樣黑體 L 是改造過後 Adobe 開發的「思源黑體」字型，由 [But Ko](https://github.com/ButTaiwan) 所開發，[專案網址可由此進](https://github.com/ButTaiwan/genyog-font)。萌台語輸入法基於 [SIL Open Font License 1.1](SIL_Open_Font_License_1.1.txt) 的授權協議，以相同的授權條款再散佈此字型。
 
 對於以其他授權發佈的圖片，您可以在圖片說明文字中找到授權條款。
 
