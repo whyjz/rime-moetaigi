@@ -93,7 +93,7 @@
 4. 本輸入法使用如下的台語字詞頻率統計資料：
    - 楊允言等 (2005)，[台語文語料庫蒐集及語料庫為本台語書面語音節詞頻統計](http://ip194097.ntcu.edu.tw/giankiu/keoe/KKH/guliau-supin/guliau-supin.asp)，國科會計畫編號 `NSC 93-2213-E-122-001`，存取日期 2021/09/26。
    - 夢生 (Yuh-ru/Dyertung, 2018)，[部育部臺灣閩南語常用詞辭典語詞字頻表](https://blog.xuite.net/hn88196555/twblog/563937744)，發表於隨意窩 xuite.net，存取日期 2021/09/26。
-5. 輸入法使用字型：[源樣黑體]((https://github.com/ButTaiwan/genyog-font) ([But Ko](https://github.com/ButTaiwan))
+5. 輸入法使用字型：[源樣黑體](https://github.com/ButTaiwan/genyog-font) ([But Ko](https://github.com/ButTaiwan))
 6. 感謝以下 Rime 的官方/客製化輸入法 schema 為本專案的開發提供了範本與靈感：
    - [『注音 洋蔥』](https://deltazone.pixnet.net/blog/post/264319309-%E9%BC%A0%E9%AC%9A%E7%AE%A1%E6%B3%A8%E9%9F%B3%E6%96%B9%E6%A1%88---%E7%AC%A6%E5%90%88%E4%B8%80%E8%88%AC%E6%B3%A8%E9%9F%B3%E4%BD%BF%E7%94%A8%E8%80%85%E7%BF%92%E6%85%A3%E8%A8%AD)(L'Étranger Onion)
    - [『Rime 注音輸入方案』](https://github.com/rime/rime-bopomofo)(佛振)
@@ -107,7 +107,7 @@
 
 ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)
 
-在本作品中，除了源樣黑體 L 的字型檔以及少數以其他授權發佈的圖片外，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
+在本作品中，**除了源樣黑體 L 的字型檔以及少數以其他授權發佈的圖片外**，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
 
 源樣黑體 L 是改造過後 Adobe 開發的「思源黑體」字型，由 [But Ko](https://github.com/ButTaiwan) 所開發，[專案網址可由此進](https://github.com/ButTaiwan/genyog-font)。萌台語輸入法基於 [SIL Open Font License 1.1](SIL_Open_Font_License_1.1.txt) 的授權協議，以相同的授權條款再散佈此字型。
 

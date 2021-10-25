@@ -39,8 +39,8 @@ pinyin_to_tsuim:
     - xform/p(?=8)/9/        # ㆴ (2)
     - xform/t4/>1/           # ㆵ (1) + 一聲
     - xform/t(?=8)/>/        # ㆵ (2)
-    - xform/k4/<1/           # ㆶ (1) + 一聲
-    - xform/k(?=8)/</        # ㆶ (2)
+    - xform/k4/<1/           # ㆻ (1) + 一聲
+    - xform/k(?=8)/</        # ㆻ (2)
     - xform/h4/41/           # ㆷ (1) + 一聲
     - xform/h(?=8)/4/        # ㆷ (2)
 
@@ -85,4 +85,4 @@ keymap_bopomofo:
 
 bopomofo_symbols:
   __append:
-    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆶㆷˊ˫˙|"
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆻㆷˊ˫˙|"
