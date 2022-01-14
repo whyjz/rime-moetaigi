@@ -49,13 +49,15 @@ $ sudo apt install ibus-rime
 $ sudo apt install font-manager
 ```
 或是使用純指令列的方法安裝字形，詳細作法可參考[此網頁。](https://linuxconfig.org/how-to-install-fonts-on-ubuntu-20-04-focal-fossa-linux)
+
 4. 進入 `ibus-setup`：
 ```sh
 $ ibus-setup
 ```
 在 General - Fontand Style 欄位中，勾選 "Use custom font"，選擇剛剛安裝的源樣黑體 L，在字型列表中的名稱是 `GenYoGothic TW L`。
+
 5. 在第二步驟中被解壓縮的 `rime-moetaigi` 資料夾內找到 `moetaigi-tsuim.schema.yaml`、`moetaigi.dict.yaml`、`moetaigi.extended.dict.yaml`、`moetaigi.unspaced.dict.yaml`、`moetaigi.unspaced.schema.yaml`，以及`tsuim.yaml` 六個檔案，複製到 `~/.config/ibus/rime` 資料夾或是用戶自訂的文件夾位置底下。
-6. `使用文字編輯器開啟 ~/.config/ibus/rime/default.yaml` (如果找不到檔案的話，就去 `/usr/share/rime-data` 資料夾中把同名的檔案複製過來，再開啟複製的檔案)，在 `schema_list` 群組中加入兩行後存檔：
+6. 使用文字編輯器開啟 `~/.config/ibus/rime/default.yaml` （如果找不到檔案的話，就去 `/usr/share/rime-data` 資料夾中把同名的檔案複製過來，再開啟複製的檔案），在 `schema_list` 群組中加入兩行後存檔：
 ```
   - schema: moetaigi.unspaced
   - schema: moetaigi-tsuim
