@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-char_freq_base_file = 'source_data/char_freq_source2_processed.txt'
-char_freq_secondary_file = 'source_data/char_freq_source1_processed.txt'
+char_freq_base_file = 'source_data/詞頻表2_經處理.txt'
+char_freq_secondary_file = 'source_data/詞頻表1_經處理.txt'
 
 df_base1 = pd.read_csv(char_freq_base_file, sep='\t')
 df_base2 = pd.read_csv(char_freq_secondary_file, sep='\t')

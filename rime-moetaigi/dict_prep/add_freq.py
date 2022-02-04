@@ -5,7 +5,7 @@ sys.path.append('source_data')
 from gen_dict import numberize_tone
 
 char_freq_file = 'char_freq_merged.txt'
-dict_raw_file = 'source_data/moetaigi-raw.dict.yaml'
+dict_raw_file = 'moetaigi-raw.dict.yaml'
 dict_target_file = 'moetaigi-new.dict.yaml'
 
 df_freq = pd.read_csv(char_freq_file, sep='\t')

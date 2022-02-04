@@ -3,7 +3,7 @@ from moetaigi import numberize_tone, make_headers
 
 full_list = pd.read_csv('source_data/詞目總檔.csv')
 
-with open('moetaigi-raw.yaml', 'w') as f:
+with open('moetaigi-raw.dict.yaml', 'w') as f:
     make_headers(f)
     
     for idx, row in full_list.iterrows():
