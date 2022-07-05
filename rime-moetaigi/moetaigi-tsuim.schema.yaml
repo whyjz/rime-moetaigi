@@ -32,8 +32,8 @@ engine:
     - punctuator
     - selector
     - navigator
-    # - fluency_editor
-    - express_editor
+    - fluency_editor
+    # - express_editor
   segmentors:
     - ascii_segmentor
     - matcher
@@ -60,7 +60,7 @@ engine:
     # - reverse_lookup_filter@bpm_reverse_lookup
 
 # menu:
-#   alternative_select_keys: "!@#$%^&"
+#   alternative_select_keys: "1234567"
 
 speller:
   alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657'
@@ -240,16 +240,32 @@ recognizer:
 
 editor:
   bindings:
-    Return: confirm   # Enter 上屏
+    Num_Lock: toggle_selection
+#     Return: confirm   # Enter 上屏
 #     space: toggle_selection
 
 key_binder:
   # import_preset: default
   bindings:
-    - { when: always, accept: space, send: Return } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
+  # - { when: always, accept: space, send: Return } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
+  # - { when: always, accept: space, send: toggle_selection } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
+  #   - { when: paging, accept: space, send: Num_Lock }
+    - { when: composing, accept: space, send: confirm }
+    - { when: has_menu, accept: space, send: Num_Lock }
+    - { when: composing, accept: Down, send: Num_Lock }
+    - { when: has_menu, accept: Down, send: Down }
+  #  - { when: always, accept: Num_Lock, send: toggle_selection } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
   #  - { when: has_menu, accept: minus, send: minus }  # 第7調
   #  - { when: paging, accept: minus, send: Page_Up }
-
+    - { when: has_menu, accept: Control+1, send: KP_1 }
+    - { when: has_menu, accept: Control+2, send: KP_2 }
+    - { when: has_menu, accept: Control+3, send: KP_3 }
+    - { when: has_menu, accept: Control+4, send: KP_4 }
+    - { when: has_menu, accept: Control+5, send: KP_5 }
+    - { when: has_menu, accept: Control+6, send: KP_6 }
+    - { when: has_menu, accept: Control+7, send: KP_7 }
+    - { when: has_menu, accept: Control+8, send: KP_8 }
+    - { when: has_menu, accept: Control+9, send: KP_9 }
 
 
 style:
