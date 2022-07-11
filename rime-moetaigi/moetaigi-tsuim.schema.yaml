@@ -254,7 +254,7 @@ key_binder:
   # import_preset: default
   bindings:
     #### 當有候選字列表時，space 的作用是 NumLock，如果沒有候選字列表但是有佇列時，space 的作用是把字送上螢幕。
-    - { when: composing, accept: space, send: confirm }
+    - { when: composing, accept: space, send: Return }
     - { when: has_menu, accept: space, send: Num_Lock }
     #### 如果沒有候選字列表但是有佇列時，按下向下鍵可以再把選字列表叫回來。
     - { when: composing, accept: Down, send: Num_Lock }
