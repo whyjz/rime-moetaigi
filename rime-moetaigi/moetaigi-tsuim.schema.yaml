@@ -58,6 +58,7 @@ engine:
   filters:
     - simplifier
     - uniquifier
+    - reverse_lookup_filter@tsuim_reverse_lookup_hidepinyin
     - reverse_lookup_filter@tsuim_reverse_lookup
     # - reverse_lookup_filter@bpm_reverse_lookup
 
@@ -125,7 +126,18 @@ zhuyin:
   # closing_tips: 【蒼頡】
   # initial_quality: 0.2  # 調整該編譯器出字優先度
 
-#### 中文反查模式的設定 (2) -- 在候選字後面顯示台文注音
+#### 中文注音反查的設定 (2) -- 對於不存在台語注音的漢字詞，在註解中把拼音隱藏起來，並顯示【無台語注音】
+tsuim_reverse_lookup_hidepinyin:
+  tags: [ zhuyin ]
+  overwrite_comment: true
+  dictionary: terra_pinyin
+  comment_format:
+    # - erase/^.*$/
+    - xform/^.*$/【無台語注音】/
+    # - xform/d/ /
+
+
+#### 中文反查模式的設定 (3) -- 如果漢字詞有台語注音，就在候選項後面顯示
 tsuim_reverse_lookup:
   tags: [ zhuyin ]
   overwrite_comment: true
