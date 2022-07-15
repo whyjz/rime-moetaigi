@@ -118,7 +118,7 @@ $ ibus-setup
 感謝以下專案與資料來源，以及背後的作者與貢獻者們，讓本輸入法得以奠基與實現：
 
 1. [Rime 中州韻輸入法引擎](https://rime.im/) ([佛振](https://github.com/lotem))
-2. [《臺灣閩南語常用詞辭典》](http://twblg.dict.edu.tw/)，使用 [CC BY-ND 3.0 臺灣授權](http://twblg.dict.edu.tw/holodict_new/compile1_6_1.jsp)
+2. [《臺灣閩南語常用詞辭典》](http://twblg.dict.edu.tw/)
 3. [萌典](https://www.moedict.tw/)與[萌典 API](https://github.com/g0v/moedict-webkit) ([唐鳳](https://github.com/audreyt))
 4. 本輸入法使用如下的台語字詞頻率統計資料：
    - 楊允言等 (2005)，[台語文語料庫蒐集及語料庫為本台語書面語音節詞頻統計](http://ip194097.ntcu.edu.tw/giankiu/keoe/KKH/guliau-supin/guliau-supin.asp)，國科會計畫編號 `NSC 93-2213-E-122-001`，存取日期 2021/09/26。
@@ -137,9 +137,15 @@ $ ibus-setup
 
 ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)
 
-在本作品中，**除了源樣黑體 L 的字型檔以及少數以其他授權發佈的圖片外**，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
+在本作品中，**除了源樣黑體 L 的字型檔、從不同來源取得的原始資料，以及少數以其他授權發佈的圖片外**，作者鄭懷傑 (Whyjay Zheng) 已在法律許可的範圍內，拋棄該著作依著作權法所享有之權利，包括所有相關與鄰接的法律權利，並宣告將該著作貢獻至公眾領域。你可以複製、修改、發布或展示此作品，亦可進行商業利用，完全不需要經過許可。更多資訊可參閱 [LICENSE](LICENSE) 檔或[這裡](https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW)。
 
-源樣黑體 L 是改造過後 Adobe 開發的「思源黑體」字型，由[柯志杰 (But Ko)](https://github.com/ButTaiwan) 所開發，[專案網址可由此進](https://github.com/ButTaiwan/genyog-font)。萌台語輸入法基於 [SIL Open Font License 1.1](SIL_Open_Font_License_1.1.txt) 的授權協議，以相同的授權條款再散佈此字型。
+以下是仍保有著作權並提供不同程度使用許可的部分：
+
+- 源樣黑體 L 是改造過後 Adobe 開發的「思源黑體」字型，由[柯志杰 (But Ko)](https://github.com/ButTaiwan) 所開發，[專案網址可由此進](https://github.com/ButTaiwan/genyog-font)。萌台語輸入法基於 [SIL Open Font License 1.1](SIL_Open_Font_License_1.1.txt) 的授權協議，以相同的授權條款再散佈此字型。
+- 《臺灣閩南語常用詞辭典》的詞目資料 `rime-moetaigi/dict_prep/source_data/詞目總檔.csv` 使用 [CC BY-ND 3.0 臺灣授權](http://twblg.dict.edu.tw/holodict_new/compile1_6_1.jsp) 再發布。
+- 《台語文語料庫蒐集及語料庫為本台語書面語音節詞頻統計》網站擷取之詞頻資料 `rime-moetaigi/dict_prep/source_data/詞頻表1*`，資料作者保留所有權利。
+- 夢生《部育部臺灣閩南語常用詞辭典語詞字頻表》部落格擷取之詞頻資料 `rime-moetaigi/dict_prep/source_data/詞頻表2*`，資料作者保留所有權利。
+
 
 對於以其他授權發佈的圖片，您可以在圖片說明文字中找到授權條款。
 
